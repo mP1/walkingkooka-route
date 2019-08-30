@@ -1,0 +1,52 @@
+[![Coverage Status](https://coveralls.io/repos/github/mP1/walkingkooka-route/badge.svg?branch=master)](https://coveralls.io/github/mP1/walkingkooka-route?branch=master)
+
+# Basic Project
+
+The basic building blocks for assembling required components for individual routes. Smarts are also included to
+group routes sharing equivalent components. Components are given to the router as key/values within a `Map`.
+
+Web routing specific `Router` is available in another github project at [walkingkooka-net](https://github.com/mP1/walkingkooka-net).
+All interesting components of a Http request become individual key/values in a `Map`
+- the security scheme: HTTP or HTTPS.
+- the method
+- individual header values
+- individual cookies
+- paths are separated into path components and named path-0, path-1, path-2...
+- query parameters
+
+The interface `HttpRequest` includes a default method `routingParameter()` that may be used to fetch the above mentioned,
+parameters in a map ready for routing.
+
+## Dependencies
+
+- [https://github.com/mP1/walkingkooka](https://github.com/mP1/walkingkooka)
+- junit
+
+No actual releases are available, instead the latest snapshot may be referenced in a Maven POM.xml using
+[https://jitpack.io](https://jitpack.io) repository.
+
+```xml
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+       <dependency>
+            <groupId>com.github.mP1</groupId>
+            <artifactId>walkingkooka</artifactId>
+            <version>master-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+```
+
+## Getting the source
+
+You can either download the source using the "ZIP" button at the top
+of the github page, or you can make a clone using git:
+
+```
+git clone git://github.com/mP1/walkingkooka-route.git
+```

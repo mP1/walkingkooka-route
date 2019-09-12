@@ -17,50 +17,25 @@
 
 package walkingkooka.routing;
 
-import org.junit.jupiter.api.Test;
-import walkingkooka.test.ToStringTesting;
-import walkingkooka.test.TypeNameTesting;
+import walkingkooka.test.Testing;
 
 import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public interface RouterTesting<R extends Router<K, T>, K, T> extends ToStringTesting<R>,
-        TypeNameTesting<R> {
+public interface RouterTesting extends Testing  {
 
-    @Test
-    default void testRouteNullParametersFails() {
-        assertThrows(NullPointerException.class, () -> {
-            this.createRouter().route(null);
-        });
-    }
-
-    R createRouter();
-
-    default void routeAndCheck(final Router<K, T> routers, final Map<K, Object> parameters, final T target) {
+    default <K, T> void routeAndCheck(final Router<K, T> router, final Map<K, Object> parameters, final T target) {
         assertEquals(Optional.of(target),
-                routers.route(parameters),
+                router.route(parameters),
                 () -> "Routing of parameters=" + parameters + " failed");
     }
 
-    default void routeFails(final Router<K, T> routers, final Map<K, Object> parameters) {
+    default <K, T> void routeFails(final Router<K, T> router, final Map<K, Object> parameters) {
         assertEquals(Optional.empty(),
-                routers.route(parameters),
+                router.route(parameters),
                 () -> "Routing of parameters=" + parameters + " should have failed");
-    }
-
-    // TypeNameTesting .........................................................................................
-
-    @Override
-    default String typeNamePrefix() {
-        return "";
-    }
-
-    @Override
-    default String typeNameSuffix() {
-        return Router.class.getSimpleName();
     }
 }
 

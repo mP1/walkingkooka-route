@@ -17,18 +17,18 @@
 
 package walkingkooka.routing;
 
-import walkingkooka.Cast;
-import walkingkooka.test.ClassTesting2;
 import walkingkooka.type.JavaVisibility;
 
-public final class RouterBuilderRouterChoicesTest implements ClassTesting2<RouterBuilderRouterChoices<Void, Void>> {
-    @Override
-    public Class<RouterBuilderRouterChoices<Void, Void>> type() {
-        return Cast.to(RouterBuilderRouterChoices.class);
+public abstract class RouteMappingsTestCase2<T> extends RouteMappingsTestCase<T> {
+
+    RouteMappingsTestCase2() {
+        super();
     }
 
+    // ClassTesting.....................................................................................................
+
     @Override
-    public JavaVisibility typeVisibility() {
+    public final JavaVisibility typeVisibility() {
         return JavaVisibility.PACKAGE_PRIVATE;
     }
 }

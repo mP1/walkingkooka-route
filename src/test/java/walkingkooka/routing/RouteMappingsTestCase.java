@@ -17,18 +17,22 @@
 
 package walkingkooka.routing;
 
-import walkingkooka.Cast;
 import walkingkooka.test.ClassTesting2;
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.test.ToStringTesting;
+import walkingkooka.test.TypeNameTesting;
 
-public final class RouterBuilderRouterPredicateTest implements ClassTesting2<RouterBuilderRouterPredicate<Void, Void>> {
-    @Override
-    public Class<RouterBuilderRouterPredicate<Void, Void>> type() {
-        return Cast.to(RouterBuilderRouterPredicate.class);
+public abstract class RouteMappingsTestCase<T> implements ClassTesting2<T>,
+        TypeNameTesting<T>,
+        ToStringTesting<T> {
+
+    RouteMappingsTestCase() {
+        super();
     }
 
+    // TypeNameTesting..................................................................................................
+
     @Override
-    public JavaVisibility typeVisibility() {
-        return JavaVisibility.PACKAGE_PRIVATE;
+    public String typeNamePrefix() {
+        return RouteMappings.class.getSimpleName();
     }
 }

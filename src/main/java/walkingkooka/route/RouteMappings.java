@@ -15,7 +15,7 @@
  *
  */
 
-package walkingkooka.routing;
+package walkingkooka.route;
 
 import walkingkooka.collect.list.Lists;
 

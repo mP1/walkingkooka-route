@@ -14,8 +14,8 @@ All interesting components of a Http request become individual key/values in a `
 - paths are separated into path components and named path-0, path-1, path-2...
 - query parameters
 
-The interface `HttpRequest` includes a default method `routingParameter()` that may be used to fetch the above mentioned,
-parameters in a map ready for routing.
+The interface `HttpRequest` includes a default method `routerParameter()` that may be used to fetch the above mentioned,
+parameters in a map ready for `Router`.
 
 ## Dependencies
 

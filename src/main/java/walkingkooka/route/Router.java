@@ -15,7 +15,7 @@
  *
  */
 
-package walkingkooka.routing;
+package walkingkooka.route;
 
 import java.util.Map;
 import java.util.Optional;

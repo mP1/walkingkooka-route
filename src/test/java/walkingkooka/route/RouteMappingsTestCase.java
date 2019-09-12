@@ -15,7 +15,7 @@
  *
  */
 
-package walkingkooka.routing;
+package walkingkooka.route;
 
 import walkingkooka.test.ClassTesting2;
 import walkingkooka.test.ToStringTesting;

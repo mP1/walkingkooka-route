@@ -15,7 +15,7 @@
  *
  */
 
-package walkingkooka.routing;
+package walkingkooka.route;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;

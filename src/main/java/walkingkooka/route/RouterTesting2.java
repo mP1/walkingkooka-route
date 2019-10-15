@@ -31,9 +31,7 @@ public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTest
 
     @Test
     default void testRouteNullParametersFails() {
-        assertThrows(NullPointerException.class, () -> {
-            this.createRouter().route(null);
-        });
+        assertThrows(NullPointerException.class, () -> this.createRouter().route(null));
     }
 
     R createRouter();

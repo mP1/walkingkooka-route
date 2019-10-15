@@ -29,9 +29,7 @@ public final class RouteMappingsRouterTest extends RouteMappingsTestCase2<RouteM
 
     @Test
     public void testEmptyMappingsFails() {
-        assertThrows(IllegalStateException.class, () -> {
-            RouteMappingsRouter.with(Lists.empty());
-        });
+        assertThrows(IllegalStateException.class, () -> RouteMappingsRouter.with(Lists.empty()));
     }
 
     // toString.........................................................................................................

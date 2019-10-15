@@ -27,7 +27,7 @@ import java.util.Optional;
 public interface Router<K, T> {
 
     /**
-     * Accepts some parameters and attempt to locate the matching {@link Routing} returning its target.
+     * Accepts some parameters and attempt to locate the only target.
      */
     Optional<T> route(final Map<K, Object> parameters) throws RouteException;
 }

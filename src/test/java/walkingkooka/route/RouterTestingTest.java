@@ -64,12 +64,9 @@ public final class RouterTestingTest implements RouterTesting {
     }
 
     private Router<Void, RouterTestingTest> router(final RouterTestingTest result) {
-        return new Router<>() {
-            @Override
-            public Optional<RouterTestingTest> route(final Map<Void, Object> parameters) throws RouteException {
-                assertSame(PARAMETERS, parameters, "parameters");
-                return Optional.ofNullable(result);
-            }
+        return parameters -> {
+            assertSame(PARAMETERS, parameters, "parameters");
+            return Optional.ofNullable(result);
         };
     }
 }

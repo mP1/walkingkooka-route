@@ -46,19 +46,17 @@ public final class RouterTesting2Test implements RouterTesting2<TestRouter, Void
 
     @Test
     public void testRouteNullParametersFailsFails() {
-        assertThrows(AssertionFailedError.class, () -> {
-            new TestRouterTesting2() {
+        assertThrows(AssertionFailedError.class, () -> new TestRouterTesting2() {
 
-                @Override
-                public TestRouter createRouter() {
-                    return new TestRouter(null) {
-                        public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) throws RouteException {
-                            return Optional.empty();
-                        }
-                    };
-                }
-            }.testRouteNullParametersFails();
-        });
+            @Override
+            public TestRouter createRouter() {
+                return new TestRouter(null) {
+                    public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) throws RouteException {
+                        return Optional.empty();
+                    }
+                };
+            }
+        }.testRouteNullParametersFails());
     }
 
     @Test
@@ -77,15 +75,13 @@ public final class RouterTesting2Test implements RouterTesting2<TestRouter, Void
     public void testRouteAndCheckParametersTargetFails() {
         final RouterTesting2Test TARGET = new RouterTesting2Test();
 
-        assertThrows(AssertionFailedError.class, () -> {
-            new TestRouterTesting2() {
+        assertThrows(AssertionFailedError.class, () -> new TestRouterTesting2() {
 
-                @Override
-                public TestRouter createRouter() {
-                    return new TestRouter(null);
-                }
-            }.routeAndCheck(PARAMETERS, TARGET);
-        });
+            @Override
+            public TestRouter createRouter() {
+                return new TestRouter(null);
+            }
+        }.routeAndCheck(PARAMETERS, TARGET));
     }
 
     @Test
@@ -103,15 +99,13 @@ public final class RouterTesting2Test implements RouterTesting2<TestRouter, Void
     public void testRouteFailsParametersFails() {
         final RouterTesting2Test TARGET = new RouterTesting2Test();
 
-        assertThrows(AssertionFailedError.class, () -> {
-            new TestRouterTesting2() {
+        assertThrows(AssertionFailedError.class, () -> new TestRouterTesting2() {
 
-                @Override
-                public TestRouter createRouter() {
-                    return new TestRouter(TARGET);
-                }
-            }.routeFails(PARAMETERS);
-        });
+            @Override
+            public TestRouter createRouter() {
+                return new TestRouter(TARGET);
+            }
+        }.routeFails(PARAMETERS));
     }
 
     @Override

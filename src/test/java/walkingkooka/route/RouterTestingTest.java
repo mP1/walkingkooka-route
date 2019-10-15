@@ -44,11 +44,9 @@ public final class RouterTestingTest implements RouterTesting {
     public void testRouteAndCheckFails() {
         final RouterTestingTest target = this;
 
-        assertThrows(AssertionFailedError.class, () -> {
-            this.routeAndCheck(this.router(null),
-                    PARAMETERS,
-                    target);
-        });
+        assertThrows(AssertionFailedError.class, () -> this.routeAndCheck(this.router(null),
+                PARAMETERS,
+                target));
     }
 
     @Test
@@ -58,9 +56,7 @@ public final class RouterTestingTest implements RouterTesting {
 
     @Test
     public void testRouteFailsFails() {
-        assertThrows(AssertionFailedError.class, () -> {
-            this.routeFails(this.router(this), PARAMETERS);
-        });
+        assertThrows(AssertionFailedError.class, () -> this.routeFails(this.router(this), PARAMETERS));
     }
 
     private Router<Void, RouterTestingTest> router(final RouterTestingTest result) {

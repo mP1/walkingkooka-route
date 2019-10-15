@@ -33,16 +33,12 @@ public final class RouteMappingsMappingTest extends RouteMappingsTestCase2<Route
 
     @Test
     public void testWithNullKeyToPredicatesFails() {
-        assertThrows(NullPointerException.class, () -> {
-            RouteMappingsMapping.with(null, this.target());
-        });
+        assertThrows(NullPointerException.class, () -> RouteMappingsMapping.with(null, this.target()));
     }
 
     @Test
     public void testWithNullTargetFails() {
-        assertThrows(NullPointerException.class, () -> {
-            RouteMappingsMapping.with(this.keyToPredicates(), null);
-        });
+        assertThrows(NullPointerException.class, () -> RouteMappingsMapping.with(this.keyToPredicates(), null));
     }
 
     // Comparable.......................................................................................................

@@ -33,7 +33,7 @@ final class RouteMappingsRouter<K, T> implements Router<K, T> {
         if(mappings.isEmpty()) {
             throw new IllegalStateException("Mappings empty");
         }
-        return new RouteMappingsRouter(mappings);
+        return new RouteMappingsRouter<>(mappings);
     }
 
     private RouteMappingsRouter(final List<RouteMappingsMapping<K, T>> mappings) {

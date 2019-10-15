@@ -34,6 +34,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
 
     // add..............................................................................................................
 
+    @SuppressWarnings("unchecked")
     @Test
     public void testAdd() {
         final RouteMappings<String, Long> mappings = RouteMappings.empty();
@@ -44,6 +45,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
         this.checkMappings(mappings);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void testAdd2() {
         final RouteMappings<String, Long> mappings = RouteMappings.empty();

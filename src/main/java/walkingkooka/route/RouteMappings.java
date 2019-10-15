@@ -49,7 +49,7 @@ public final class RouteMappings<K, T> {
         copy.addAll(this.mappings);
         copy.add(RouteMappingsMapping.with(keyToPredicates, target));
 
-        return new RouteMappings(copy);
+        return new RouteMappings<>(copy);
     }
 
     /**

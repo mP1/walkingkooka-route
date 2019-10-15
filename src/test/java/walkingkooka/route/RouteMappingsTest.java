@@ -62,6 +62,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
     }
 
 
+    @SafeVarargs
     private void checkMappings(final RouteMappings<String, Long> mappings,
                                final RouteMappingsMapping<String, Long>... mapping) {
         assertEquals(Lists.of(mapping), mappings.mappings, "mappings");

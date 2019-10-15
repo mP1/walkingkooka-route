@@ -163,10 +163,6 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
         return Maps.of(KEY1A, Predicates.is(VALUE1B), KEY2B, Predicates.is(VALUE2));
     }
 
-    private RouteMappingsMapping<String, Long> mapping3() {
-        return RouteMappingsMapping.with(this.keyToPredicates3(), TARGET3);
-    }
-
     final Map<String, Predicate<?>> keyToPredicates3() {
         return Maps.of(KEY1A, Predicates.is(VALUE1A), KEY2B, Predicates.is(VALUE2), KEY3C, Predicates.is(VALUE3));
     }

@@ -48,8 +48,7 @@ final class RouteMappingsMapping<K, T> implements HashCodeEqualsDefined,
         this.target = target;
     }
 
-    // @VisibleForTesting
-    final Map<? extends K, Predicate<?>> keyToPredicates;
+    private final Map<? extends K, Predicate<?>> keyToPredicates;
 
     T target() {
         return this.target;

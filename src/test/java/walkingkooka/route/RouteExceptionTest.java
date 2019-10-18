@@ -17,8 +17,8 @@
 
 package walkingkooka.route;
 
-import walkingkooka.test.StandardThrowableTesting;
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.reflect.JavaVisibility;
+import walkingkooka.reflect.StandardThrowableTesting;
 
 final public class RouteExceptionTest implements StandardThrowableTesting<RouteException> {
 

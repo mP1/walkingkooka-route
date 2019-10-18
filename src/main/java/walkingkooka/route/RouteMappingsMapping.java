@@ -20,7 +20,6 @@ package walkingkooka.route;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.map.Maps;
-import walkingkooka.test.HashCodeEqualsDefined;
 
 import java.util.Map;
 import java.util.Objects;
@@ -29,8 +28,7 @@ import java.util.function.Predicate;
 /**
  * Represents a single mapping with one or more key to predicates and the target that is returned when all are true.
  */
-final class RouteMappingsMapping<K, T> implements HashCodeEqualsDefined,
-        Comparable<RouteMappingsMapping<K, T>>,
+final class RouteMappingsMapping<K, T> implements Comparable<RouteMappingsMapping<K, T>>,
         Predicate<Map<K, Object>> {
 
     static <K, T> RouteMappingsMapping<K, T> with(final Map<? extends K, Predicate<?>> keyToPredicates,

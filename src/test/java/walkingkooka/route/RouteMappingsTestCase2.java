@@ -17,7 +17,7 @@
 
 package walkingkooka.route;
 
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.reflect.JavaVisibility;
 
 public abstract class RouteMappingsTestCase2<T> extends RouteMappingsTestCase<T> {
 

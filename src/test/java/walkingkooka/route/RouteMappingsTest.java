@@ -22,7 +22,7 @@ import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.collect.map.Maps;
 import walkingkooka.predicate.Predicates;
-import walkingkooka.type.JavaVisibility;
+import walkingkooka.reflect.JavaVisibility;
 
 import java.util.Map;
 import java.util.function.Predicate;

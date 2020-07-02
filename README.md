@@ -6,34 +6,39 @@
 
 
 
-# Basic Project
+# Router
 
-The basic building blocks for assembling required components for individual routes. Smarts are also included to
-group routes sharing equivalent components. Components are given to the router as key/values within a `Map`.
+The following example builds a very simple, totally useless router that dispatches urls. This examples constructs a router
+where all some components of a URL have been decomposed into components, and several paths have all their required components
+and predicates defined. The router will then return the target value only if only a single rule is entirely matched.
 
-Web routing specific `Router` is available in another github project at [walkingkooka-net](https://github.com/mP1/walkingkooka-net).
-All interesting components of a Http request become individual key/values in a `Map`
-- the security scheme: HTTP or HTTPS.
-- the method
-- individual header values
-- individual cookies
-- paths are separated into path components and named path-0, path-1, path-2...
-- query parameters
+```java
+final RouteMappings<String, Integer> mappings = RouteMappings.<String, Integer>empty()
+        .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example.com")), 12)
+        .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example2.com")), 34)
+        .add(Maps.of("protocol", Predicates.is("https")), 56);
+final Router<String, Integer> router = mappings.router();
 
-The interface `HttpRequest` includes a default method `routerParameter()` that may be used to fetch the above mentioned,
-parameters in a map ready for `Router`.
+final Optional<Integer> https = router.route(Maps.of("protocol", "https")); // should return 56
+final Optional<Integer> http = router.route(Maps.of("protocol", "http")); // 12 and 34 both match returns nothing.
+final Optional<Integer> httpExample = router.route(Maps.of("protocol", "http", "host", "example.com")); // should return 12
 
-## Dependencies
+assertEquals(Optional.of(56), https);
+assertEquals(Optional.empty(), http); // matches two rules, there no value
+assertEquals(Optional.of(12), httpExample);
+```
 
-- [https://github.com/mP1/walkingkooka](https://github.com/mP1/walkingkooka)
-- junit
+
+## [walkingkooka-net](https://github.com/mP1/walkingkooka-net)
+
+This projects takes this project to the next level, supporting expressing rules about all components within a http request.
 
 
 
 ## Getting the source
 
 You can either download the source using the "ZIP" button at the top
-of the github page, or you can make a clone using git:
+of the github page, or clone using git:
 
 ```
 git clone git://github.com/mP1/walkingkooka-route.git

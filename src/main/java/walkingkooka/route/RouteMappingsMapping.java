@@ -17,7 +17,6 @@
 
 package walkingkooka.route;
 
-import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.map.Maps;
 
@@ -56,7 +55,6 @@ final class RouteMappingsMapping<K, T> implements Comparable<RouteMappingsMappin
 
     // Object...........................................................................................................
 
-    @Test
     public int hashCode() {
         return this.target.hashCode();
     }

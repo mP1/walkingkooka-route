@@ -18,6 +18,7 @@
 package walkingkooka.route;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -30,4 +31,13 @@ public interface Router<K, T> {
      * Accepts some parameters and attempt to locate the only target.
      */
     Optional<T> route(final Map<K, Object> parameters) throws RouteException;
+
+    /**
+     * Returns a {@link Router} which chain tests against this {@link Router} followed by the router parameter..
+     */
+    default Router<K, T> then(final Router<K, T> router) {
+        Objects.requireNonNull(router, "router");
+
+        return ChainRouter.with(this, router);
+    }
 }

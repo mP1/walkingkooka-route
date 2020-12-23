@@ -23,6 +23,7 @@ import walkingkooka.reflect.TypeNameTesting;
 
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTesting,
@@ -32,6 +33,17 @@ public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTest
     @Test
     default void testRouteNullParametersFails() {
         assertThrows(NullPointerException.class, () -> this.createRouter().route(null));
+    }
+
+    @Test
+    default void testThenNullRouterFails() {
+        assertThrows(NullPointerException.class, () -> this.createRouter().then(null));
+    }
+
+    @Test
+    default void testThenSelf() {
+        final R router = this.createRouter();
+        assertEquals(router, router.then(router));
     }
 
     R createRouter();

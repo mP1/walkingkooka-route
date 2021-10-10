@@ -29,11 +29,13 @@ import java.util.function.Predicate;
 public final class RouteMappings<K, T> {
 
     /**
-     * Creates an empty {@link RouteMappings}.
+     * An empty {@link RouteMappings}.
      */
     public static <K, V> RouteMappings<K, V> empty() {
-        return new RouteMappings<>(Lists.empty());
+        return INSTANCE;
     }
+
+    private final static RouteMappings INSTANCE = new RouteMappings(Lists.empty());
 
     private RouteMappings(final List<RouteMappingsMapping<K, T>> mappings) {
         super();

@@ -43,7 +43,7 @@ public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTest
     @Test
     default void testThenSelf() {
         final R router = this.createRouter();
-        assertEquals(router, router.then(router));
+        this.checkEquals(router, router.then(router));
     }
 
     R createRouter();

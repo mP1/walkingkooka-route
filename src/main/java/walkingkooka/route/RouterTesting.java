@@ -27,15 +27,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public interface RouterTesting extends Testing  {
 
     default <K, T> void routeAndCheck(final Router<K, T> router, final Map<K, Object> parameters, final T target) {
-        assertEquals(Optional.of(target),
+        this.checkEquals(
+                Optional.of(target),
                 router.route(parameters),
-                () -> "Routing of parameters=" + parameters + " failed");
+                () -> "Routing of parameters=" + parameters + " failed"
+        );
     }
 
     default <K, T> void routeFails(final Router<K, T> router, final Map<K, Object> parameters) {
-        assertEquals(Optional.empty(),
+        this.checkEquals(
+                Optional.empty(),
                 router.route(parameters),
-                () -> "Routing of parameters=" + parameters + " should have failed");
+                () -> "Routing of parameters=" + parameters + " should have failed"
+        );
     }
 }
 

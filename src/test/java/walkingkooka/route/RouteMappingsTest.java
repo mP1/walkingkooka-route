@@ -59,22 +59,27 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
         this.checkMappings(mappings);
     }
 
-
     @SafeVarargs
     private void checkMappings(final RouteMappings<String, Long> mappings,
                                final RouteMappingsMapping<String, Long>... mapping) {
-        assertEquals(Lists.of(mapping), mappings.mappings, "mappings");
+        this.checkEquals(
+                Lists.of(mapping),
+                mappings.mappings,
+                "mappings"
+        );
     }
 
     // router...........................................................................................................
 
     @Test
     public void testRouteNone() {
-        this.routeFails(RouteMappings.<String, Long>empty()
+        this.routeFails(
+                RouteMappings.<String, Long>empty()
                         .add(this.keyToPredicates1(), TARGET1)
                         .add(this.keyToPredicates1(), TARGET2)
                         .router(),
-                Maps.of(KEY3C, VALUE3));
+                Maps.of(KEY3C, VALUE3)
+        );
     }
 
     @Test

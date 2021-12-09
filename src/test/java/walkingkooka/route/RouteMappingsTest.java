@@ -152,7 +152,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
     private final static Long TARGET2 = 200L;
     private final static Long TARGET3 = 300L;
 
-    final Map<String, Predicate<?>> keyToPredicates1() {
+    Map<String, Predicate<?>> keyToPredicates1() {
         return Maps.of(KEY1A, Predicates.is(VALUE1A), KEY2B, Predicates.is(VALUE2));
     }
 
@@ -160,11 +160,11 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
         return RouteMappingsMapping.with(this.keyToPredicates2(), TARGET2);
     }
 
-    final Map<String, Predicate<?>> keyToPredicates2() {
+    Map<String, Predicate<?>> keyToPredicates2() {
         return Maps.of(KEY1A, Predicates.is(VALUE1B), KEY2B, Predicates.is(VALUE2));
     }
 
-    final Map<String, Predicate<?>> keyToPredicates3() {
+    Map<String, Predicate<?>> keyToPredicates3() {
         return Maps.of(KEY1A, Predicates.is(VALUE1A), KEY2B, Predicates.is(VALUE2), KEY3C, Predicates.is(VALUE3));
     }
 
@@ -176,7 +176,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
     }
 
     @Override
-    public final JavaVisibility typeVisibility() {
+    public JavaVisibility typeVisibility() {
         return JavaVisibility.PUBLIC;
     }
 

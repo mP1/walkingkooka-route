@@ -27,8 +27,6 @@ import walkingkooka.reflect.JavaVisibility;
 import java.util.Map;
 import java.util.function.Predicate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings<String, Long>>
         implements RouterTesting {
 

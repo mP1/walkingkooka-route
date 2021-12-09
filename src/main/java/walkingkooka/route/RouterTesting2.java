@@ -23,7 +23,6 @@ import walkingkooka.reflect.TypeNameTesting;
 
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTesting,

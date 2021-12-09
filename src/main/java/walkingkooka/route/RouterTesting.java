@@ -22,8 +22,6 @@ import walkingkooka.test.Testing;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public interface RouterTesting extends Testing  {
 
     default <K, T> void routeAndCheck(final Router<K, T> router, final Map<K, Object> parameters, final T target) {

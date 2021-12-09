@@ -17,6 +17,7 @@
 
 package walkingkooka.route;
 
+import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 
 import java.util.List;
@@ -32,10 +33,10 @@ public final class RouteMappings<K, T> {
      * An empty {@link RouteMappings}.
      */
     public static <K, V> RouteMappings<K, V> empty() {
-        return INSTANCE;
+        return Cast.to(INSTANCE);
     }
 
-    private final static RouteMappings INSTANCE = new RouteMappings(Lists.empty());
+    private final static RouteMappings<?, ?> INSTANCE = new RouteMappings<>(Lists.empty());
 
     private RouteMappings(final List<RouteMappingsMapping<K, T>> mappings) {
         super();

@@ -73,11 +73,11 @@ public final class RouteMappingsMappingTest extends RouteMappingsTestCase2<Route
         return RouteMappingsMapping.with(this.keyToPredicates(), this.target());
     }
 
-    final Map<String, Predicate<?>> keyToPredicates() {
+    Map<String, Predicate<?>> keyToPredicates() {
         return Maps.of("key-1a", Predicates.is(1), "key-2b", Predicates.is(99));
     }
 
-    final Integer target() {
+    Integer target() {
         return 100;
     }
 

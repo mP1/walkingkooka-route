@@ -35,9 +35,9 @@ public final class JunitTest {
     @Test
     public void testBasicHttpRouter() {
         final RouteMappings<String, Integer> mappings = RouteMappings.<String, Integer>empty()
-                .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example.com")), 12)
-                .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example2.com")), 34)
-                .add(Maps.of("protocol", Predicates.is("https")), 56);
+            .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example.com")), 12)
+            .add(Maps.of("protocol", Predicates.is("http"), "host", Predicate.isEqual("example2.com")), 34)
+            .add(Maps.of("protocol", Predicates.is("https")), 56);
         final Router<String, Integer> router = mappings.router();
 
         final Optional<Integer> https = router.route(Maps.of("protocol", "https")); // should return 56

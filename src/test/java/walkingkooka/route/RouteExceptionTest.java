@@ -31,7 +31,7 @@ final public class RouteExceptionTest implements StandardThrowableTesting<RouteE
     public RouteException createThrowable(final String message, final Throwable cause) {
         return new RouteException(message, cause);
     }
-    
+
     @Override
     public Class<RouteException> type() {
         return RouteException.class;

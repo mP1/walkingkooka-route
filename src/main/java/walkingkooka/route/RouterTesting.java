@@ -22,21 +22,21 @@ import walkingkooka.test.Testing;
 import java.util.Map;
 import java.util.Optional;
 
-public interface RouterTesting extends Testing  {
+public interface RouterTesting extends Testing {
 
     default <K, T> void routeAndCheck(final Router<K, T> router, final Map<K, Object> parameters, final T target) {
         this.checkEquals(
-                Optional.of(target),
-                router.route(parameters),
-                () -> "Routing of parameters=" + parameters + " failed"
+            Optional.of(target),
+            router.route(parameters),
+            () -> "Routing of parameters=" + parameters + " failed"
         );
     }
 
     default <K, T> void routeFails(final Router<K, T> router, final Map<K, Object> parameters) {
         this.checkEquals(
-                Optional.empty(),
-                router.route(parameters),
-                () -> "Routing of parameters=" + parameters + " should have failed"
+            Optional.empty(),
+            router.route(parameters),
+            () -> "Routing of parameters=" + parameters + " should have failed"
         );
     }
 }

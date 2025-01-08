@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings<String, Long>>
-        implements RouterTesting {
+    implements RouterTesting {
 
     // add..............................................................................................................
 
@@ -61,9 +61,9 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
     private void checkMappings(final RouteMappings<String, Long> mappings,
                                final RouteMappingsMapping<String, Long>... mapping) {
         this.checkEquals(
-                Lists.of(mapping),
-                mappings.mappings,
-                "mappings"
+            Lists.of(mapping),
+            mappings.mappings,
+            "mappings"
         );
     }
 
@@ -72,53 +72,53 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
     @Test
     public void testRouteNone() {
         this.routeFails(
-                RouteMappings.<String, Long>empty()
-                        .add(this.keyToPredicates1(), TARGET1)
-                        .add(this.keyToPredicates1(), TARGET2)
-                        .router(),
-                Maps.of(KEY3C, VALUE3)
+            RouteMappings.<String, Long>empty()
+                .add(this.keyToPredicates1(), TARGET1)
+                .add(this.keyToPredicates1(), TARGET2)
+                .router(),
+            Maps.of(KEY3C, VALUE3)
         );
     }
 
     @Test
     public void testRouteNone2() {
         this.routeFails(RouteMappings.<String, Long>empty()
-                        .add(this.keyToPredicates1(), TARGET1)
-                        .add(this.keyToPredicates1(), TARGET2)
-                        .add(this.keyToPredicates3(), TARGET3)
-                        .router(),
-                Maps.of(KEY3C, VALUE3));
+                .add(this.keyToPredicates1(), TARGET1)
+                .add(this.keyToPredicates1(), TARGET2)
+                .add(this.keyToPredicates3(), TARGET3)
+                .router(),
+            Maps.of(KEY3C, VALUE3));
     }
 
     @Test
     public void testRouteFirst() {
         this.routeAndCheck(RouteMappings.<String, Long>empty()
-                        .add(this.keyToPredicates1(), TARGET1)
-                        .add(this.keyToPredicates2(), TARGET2)
-                        .router(),
-                Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2),
-                TARGET1);
+                .add(this.keyToPredicates1(), TARGET1)
+                .add(this.keyToPredicates2(), TARGET2)
+                .router(),
+            Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2),
+            TARGET1);
     }
 
     @Test
     public void testRouteBest() {
         this.routeAndCheck(RouteMappings.<String, Long>empty()
-                        .add(this.keyToPredicates1(), TARGET1)
-                        .add(this.keyToPredicates2(), TARGET2)
-                        .add(this.keyToPredicates3(), TARGET3)
-                        .router(),
-                Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2, KEY3C, VALUE3),
-                TARGET3);
+                .add(this.keyToPredicates1(), TARGET1)
+                .add(this.keyToPredicates2(), TARGET2)
+                .add(this.keyToPredicates3(), TARGET3)
+                .router(),
+            Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2, KEY3C, VALUE3),
+            TARGET3);
     }
 
     @Test
     public void testRouteLast() {
         this.routeAndCheck(RouteMappings.<String, Long>empty()
-                        .add(this.keyToPredicates3(), TARGET3)
-                        .add(this.keyToPredicates1(), TARGET1)
-                        .router(),
-                Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2),
-                TARGET1);
+                .add(this.keyToPredicates3(), TARGET3)
+                .add(this.keyToPredicates1(), TARGET1)
+                .router(),
+            Maps.of(KEY1A, VALUE1A, KEY2B, VALUE2),
+            TARGET1);
     }
 
     // toString.........................................................................................................
@@ -132,7 +132,7 @@ public final class RouteMappingsTest extends RouteMappingsTestCase<RouteMappings
 
     private RouteMappings<String, Long> mappings() {
         return RouteMappings.<String, Long>empty()
-                .add(this.keyToPredicates1(), TARGET1);
+            .add(this.keyToPredicates1(), TARGET1);
     }
 
     private RouteMappingsMapping<String, Long> mapping1() {

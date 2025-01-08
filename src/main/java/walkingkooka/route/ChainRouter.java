@@ -29,8 +29,8 @@ final class ChainRouter<K, V> implements Router<K, V> {
     static <K, V> Router<K, V> with(final Router<K, V> first,
                                     final Router<K, V> second) {
         return first.equals(second) ?
-                first :
-                new ChainRouter<>(first, second);
+            first :
+            new ChainRouter<>(first, second);
     }
 
     private ChainRouter(final Router<K, V> first,
@@ -46,8 +46,8 @@ final class ChainRouter<K, V> implements Router<K, V> {
     public Optional<V> route(final Map<K, Object> parameters) throws RouteException {
         final Optional<V> result = this.first.route(parameters);
         return result.isPresent() ?
-                result :
-                this.second.route(parameters);
+            result :
+            this.second.route(parameters);
     }
 
     // Object...........................................................................................................
@@ -60,13 +60,13 @@ final class ChainRouter<K, V> implements Router<K, V> {
     @Override
     public boolean equals(final Object other) {
         return this == other ||
-                other instanceof ChainRouter &&
-                        this.equals0((ChainRouter<?, ?>) other);
+            other instanceof ChainRouter &&
+                this.equals0((ChainRouter<?, ?>) other);
     }
 
     private boolean equals0(final ChainRouter<?, ?> other) {
         return this.first.equals(other.first) &&
-                this.second.equals(other.second);
+            this.second.equals(other.second);
     }
 
     private final Router<K, V> first;

@@ -36,8 +36,8 @@ public final class RouterTestingTest implements RouterTesting {
         final RouterTestingTest target = this;
 
         this.routeAndCheck(this.router(target),
-                PARAMETERS,
-                target);
+            PARAMETERS,
+            target);
     }
 
     @Test
@@ -45,8 +45,8 @@ public final class RouterTestingTest implements RouterTesting {
         final RouterTestingTest target = this;
 
         assertThrows(AssertionFailedError.class, () -> this.routeAndCheck(this.router(null),
-                PARAMETERS,
-                target));
+            PARAMETERS,
+            target));
     }
 
     @Test

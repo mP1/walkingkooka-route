@@ -30,7 +30,7 @@ import java.util.Optional;
 final class RouteMappingsRouter<K, T> implements Router<K, T> {
 
     static <K, T> RouteMappingsRouter<K, T> with(final List<RouteMappingsMapping<K, T>> mappings) {
-        if(mappings.isEmpty()) {
+        if (mappings.isEmpty()) {
             throw new IllegalStateException("Mappings empty");
         }
         return new RouteMappingsRouter<>(mappings);
@@ -51,9 +51,9 @@ final class RouteMappingsRouter<K, T> implements Router<K, T> {
     @Override
     public Optional<T> route(final Map<K, Object> parameters) throws RouteException {
         return this.mappings.stream()
-                .filter(m -> m.test(parameters))
-                .map(RouteMappingsMapping::target)
-                .findFirst();
+            .filter(m -> m.test(parameters))
+            .map(RouteMappingsMapping::target)
+            .findFirst();
     }
 
     /**

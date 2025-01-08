@@ -47,17 +47,17 @@ public final class RouteMappingsRouterTest extends RouteMappingsTestCase2<RouteM
 
     private RouteMappingsMapping<String, Integer> mapping1() {
         return RouteMappingsMapping.with(Maps.of("key-1a", Predicates.is(1), "key-2b", Predicates.is(2)),
-                1000);
+            1000);
     }
 
     private RouteMappingsMapping<String, Integer> mapping2() {
         return RouteMappingsMapping.with(Maps.of("key-1a", Predicates.is(1)),
-                1022);
+            1022);
     }
 
     private RouteMappingsMapping<String, Integer> mapping3() {
         return RouteMappingsMapping.with(Maps.of("key-1a", Predicates.is(1), "key-2b", Predicates.is(2), "key-3c", Predicates.is(3)),
-                1333);
+            1333);
     }
 
     // ClassTesting.....................................................................................................

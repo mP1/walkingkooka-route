@@ -26,8 +26,8 @@ import walkingkooka.collect.map.Maps;
 import java.util.Optional;
 
 public final class ChainRouterTest implements RouterTesting2<ChainRouter<String, Integer>, String, Integer>,
-        HashCodeEqualsDefinedTesting2<ChainRouter<String, Integer>>,
-        ToStringTesting<ChainRouter<String, Integer>> {
+    HashCodeEqualsDefinedTesting2<ChainRouter<String, Integer>>,
+    ToStringTesting<ChainRouter<String, Integer>> {
 
     private final static String PARAMETER = "parameter";
 

@@ -26,8 +26,8 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTesting,
-        ToStringTesting<R>,
-        TypeNameTesting<R> {
+    ToStringTesting<R>,
+    TypeNameTesting<R> {
 
     @Test
     default void testRouteNullParametersFails() {
@@ -49,13 +49,13 @@ public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTest
 
     default void routeAndCheck(final Map<K, Object> parameters, final T target) {
         this.routeAndCheck(this.createRouter(),
-                parameters,
-                target);
+            parameters,
+            target);
     }
 
     default void routeFails(final Map<K, Object> parameters) {
         this.routeFails(this.createRouter(),
-                parameters);
+            parameters);
     }
 
     // TypeNameTesting .................................................................................................

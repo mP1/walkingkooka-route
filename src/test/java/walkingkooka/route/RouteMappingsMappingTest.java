@@ -29,7 +29,7 @@ import java.util.function.Predicate;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public final class RouteMappingsMappingTest extends RouteMappingsTestCase2<RouteMappingsMapping<String, Integer>>
-        implements ComparableTesting2<RouteMappingsMapping<String, Integer>> {
+    implements ComparableTesting2<RouteMappingsMapping<String, Integer>> {
 
     @Test
     public void testWithNullKeyToPredicatesFails() {
@@ -51,8 +51,8 @@ public final class RouteMappingsMappingTest extends RouteMappingsTestCase2<Route
     @Test
     public void testMore() {
         this.compareToAndCheckMore(RouteMappingsMapping.with(Maps.of("key-1a", Predicates.is(1),
-                "key-2b", Predicates.is(2),
-                "key-3c", Predicates.is(3)), 98));
+            "key-2b", Predicates.is(2),
+            "key-3c", Predicates.is(3)), 98));
     }
 
     @Override

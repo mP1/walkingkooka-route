@@ -28,7 +28,7 @@ import java.util.function.Predicate;
  * Represents a single mapping with one or more key to predicates and the target that is returned when all are true.
  */
 final class RouteMappingsMapping<K, T> implements Comparable<RouteMappingsMapping<K, T>>,
-        Predicate<Map<K, Object>> {
+    Predicate<Map<K, Object>> {
 
     static <K, T> RouteMappingsMapping<K, T> with(final Map<? extends K, Predicate<?>> keyToPredicates,
                                                   final T target) {
@@ -90,7 +90,7 @@ final class RouteMappingsMapping<K, T> implements Comparable<RouteMappingsMappin
     @Override
     public boolean test(final Map<K, Object> parameters) {
         return this.keyToPredicates.entrySet()
-                .stream()
-                .allMatch(e -> e.getValue().test(Cast.to(parameters.get(e.getKey()))));
+            .stream()
+            .allMatch(e -> e.getValue().test(Cast.to(parameters.get(e.getKey()))));
     }
 }

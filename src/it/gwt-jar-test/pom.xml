@@ -36,8 +36,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                     <compilerArgs>
                         <arg>-Awalkingkooka.j2cl.java.util.Currency=XXX</arg>
                         <arg>-Awalkingkooka.j2cl.java.util.Locale=EN-AU</arg>
@@ -57,7 +57,7 @@
                 <configuration>
                     <failOnError>true</failOnError>
                     <moduleName>test.Test</moduleName>
-                    <sourceLevel>1.8</sourceLevel>
+                    <sourceLevel>11</sourceLevel>
                     <logLevel>DEBUG</logLevel>
                     <style>PRETTY</style>
                 </configuration>

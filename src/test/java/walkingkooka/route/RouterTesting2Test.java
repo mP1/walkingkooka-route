@@ -51,7 +51,7 @@ public final class RouterTesting2Test implements RouterTesting2<TestRouter, Void
             @Override
             public TestRouter createRouter() {
                 return new TestRouter(null) {
-                    public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) throws RouteException {
+                    public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) {
                         return Optional.empty();
                     }
                 };
@@ -125,7 +125,7 @@ public final class RouterTesting2Test implements RouterTesting2<TestRouter, Void
         }
 
         @Override
-        public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) throws RouteException {
+        public Optional<RouterTesting2Test> route(final Map<Void, Object> parameters) {
             Objects.requireNonNull(parameters, "parameters");
             assertSame(PARAMETERS, parameters, "parameters");
             return Optional.ofNullable(this.result);

@@ -30,7 +30,7 @@ public interface Router<K, T> {
     /**
      * Accepts some parameters and attempt to locate the only target.
      */
-    Optional<T> route(final Map<K, Object> parameters) throws RouteException;
+    Optional<T> route(final Map<K, Object> parameters);
 
     /**
      * Returns a {@link Router} which chain tests against this {@link Router} followed by the router parameter..

@@ -43,7 +43,7 @@ final class ChainRouter<K, V> implements Router<K, V> {
     // Router...........................................................................................................
 
     @Override
-    public Optional<V> route(final Map<K, Object> parameters) throws RouteException {
+    public Optional<V> route(final Map<K, Object> parameters) {
         final Optional<V> result = this.first.route(parameters);
         return result.isPresent() ?
             result :

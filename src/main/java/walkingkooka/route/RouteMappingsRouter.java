@@ -49,7 +49,7 @@ final class RouteMappingsRouter<K, T> implements Router<K, T> {
     // Router...........................................................................................................
 
     @Override
-    public Optional<T> route(final Map<K, Object> parameters) throws RouteException {
+    public Optional<T> route(final Map<K, Object> parameters) {
         return this.mappings.stream()
             .filter(m -> m.test(parameters))
             .map(RouteMappingsMapping::target)

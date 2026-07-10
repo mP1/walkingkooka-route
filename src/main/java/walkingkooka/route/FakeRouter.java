@@ -17,18 +17,17 @@
 
 package walkingkooka.route;
 
-import walkingkooka.reflect.PublicStaticHelper;
+import java.util.Map;
+import java.util.Optional;
 
-public final class Routers implements PublicStaticHelper {
+public class FakeRouter<K, T> implements Router<K, T> {
 
-    /**
-     * {@link FakeRouter}
-     */
-    public static <K, T> FakeRouter<K, T> fake() {
-        return new FakeRouter<>();
+    public FakeRouter() {
+        super();
     }
 
-    private Routers() {
+    @Override
+    public Optional<T> route(final Map<K, Object> parameters) {
         throw new UnsupportedOperationException();
     }
 }

@@ -19,7 +19,16 @@ package walkingkooka.route;
 
 import walkingkooka.reflect.PublicStaticHelper;
 
+import java.util.List;
+
 public final class Routers implements PublicStaticHelper {
+
+    /**
+     * {@link RouterCollection}
+     */
+    public static <K, V> Router<K, V> collection(final List<Router<K, V>> routers) {
+        return RouterCollection.with(routers);
+    }
 
     /**
      * {@link FakeRouter}

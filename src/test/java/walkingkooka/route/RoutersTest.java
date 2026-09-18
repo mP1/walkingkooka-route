@@ -30,11 +30,6 @@ public final class RoutersTest implements PublicStaticHelperTesting<Routers> {
     }
 
     @Override
-    public JavaVisibility typeVisibility() {
-        return JavaVisibility.PUBLIC;
-    }
-
-    @Override
     public boolean canHavePublicTypes(final Method method) {
         return false;
     }

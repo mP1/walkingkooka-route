@@ -27,7 +27,7 @@ import java.util.Optional;
 
 public final class ChainRouterTest implements RouterTesting2<ChainRouter<String, Integer>, String, Integer>,
     HashCodeEqualsDefinedTesting2<ChainRouter<String, Integer>>,
-    ToStringTesting<ChainRouter<String, Integer>> {
+    ToStringTesting {
 
     private final static String PARAMETER = "parameter";
 

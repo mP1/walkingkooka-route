@@ -23,7 +23,7 @@ import walkingkooka.reflect.TypeNameTesting;
 
 public abstract class RouteMappingsTestCase<T> implements ClassTesting2<T>,
     TypeNameTesting<T>,
-    ToStringTesting<T> {
+    ToStringTesting {
 
     RouteMappingsTestCase() {
         super();

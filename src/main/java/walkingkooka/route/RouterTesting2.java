@@ -26,7 +26,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public interface RouterTesting2<R extends Router<K, T>, K, T> extends RouterTesting,
-    ToStringTesting<R>,
+    ToStringTesting,
     TypeNameTesting<R> {
 
     @Test
